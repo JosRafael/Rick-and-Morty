@@ -53,10 +53,11 @@ const fetchEpisode = async (urls) => {
 btnGo.addEventListener('click', async (event) => {
     event.preventDefault();
     const id = characterId.value;
-    if(id) { // Check if the ID is not empty
+    if(id) {
         const character = await fetchCharacter(id);
         characterInfo.innerHTML = `
-          <h2>${character.name}</h2>
+          <h2>Informações do Personagem</h2>
+          <h3>${character.name}</h3>
           <p>Status: ${character.status}</p>
           <p>Espécie: ${character.species}</p>
           <p>Tipo: ${character.type}</p>
@@ -65,10 +66,12 @@ btnGo.addEventListener('click', async (event) => {
           <img src="${character.image}" alt="${character.name}">
         `;
         characterInfo.style.display = 'block';
+        document.getElementById('content').style.display = 'block';
+
 
         const location = await fetchLocation(character.location);
         locationInfo.innerHTML = `
-          <h2>Informações de Localização</h2>
+          <h2>Localização do Personagem</h2>
           <p>Nome: ${location.name}</p>
           <p>Tipo: ${location.type}</p>
           <p>Dimensão: ${location.dimension}</p>
@@ -77,13 +80,13 @@ btnGo.addEventListener('click', async (event) => {
 
         const episodes = await fetchEpisode(character.episodes);
         episodesInfo.innerHTML = `
-          <h2>Informações de Episódios</h2>
+          <h2>Episódios do Personagem</h2>
           <ul>
             ${episodes.map(episode => `<li>${episode.name}</li>`).join('')}
           </ul>
         `;
         episodesInfo.style.display = 'block';
     } else {
-        alert('Por favor, digite um número para buscar o personagem.');
+        alert('Por favor, digite o número do personagem.');
     }
 });
