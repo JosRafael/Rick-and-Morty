@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -21,7 +22,6 @@ input[type="number"] {
     border: 1px solid #ccc;
     margin-right: 10px;
 }
-
 
 button {
     padding: 8px 70px;
@@ -49,14 +49,12 @@ button:hover {
     display: none; /* Initially hide the content */
 }
 
-
 #character-info,
 #location-info,
 #episodes-info {
     display: none;
     margin-bottom: 20px;
 }
-
 
 #character-info h2,
 #location-info h2,
@@ -76,4 +74,58 @@ img {
     display: block;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+/* Media Queries */
+
+/* iPhone 5/SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+    input[type="number"] {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* iPhone 6/7/8 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    /* Add specific styles for iPhone 6/7/8 here if needed */
+}
+
+/* iPhone 6/7/8 Plus */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+    /* Add specific styles for iPhone 6/7/8 Plus here if needed */
+}
+
+/* iPhone X/XS */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+    /* Add specific styles for iPhone X/XS here if needed */
+}
+
+/* iPhone XR */
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) {
+    /* Add specific styles for iPhone XR here if needed */
+}
+
+/* iPhone XS Max */
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) {
+    /* Add specific styles for iPhone XS Max here if needed */
+}
+
+/* iPhone 11 */
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 2) {
+    /* Add specific styles for iPhone 11 here if needed */
+}
+
+/* iPhone 11 Pro */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+    /* Add specific styles for iPhone 11 Pro here if needed */
+}
+
+/* iPhone 11 Pro Max */
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) {
+    /* Add specific styles for iPhone 11 Pro Max here if needed */
 }
