@@ -7,7 +7,6 @@ const episodesInfo = document.getElementById('episodes-info');
 const fetchCharacter = async (id) => {
     const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
     const character = await res.json();
-    // Mapeia as informações para traduzir para o português
     const translatedCharacter = {
         name: character.name,
         status: character.status === 'Alive' ? 'Vivo' : 'Morto',
@@ -17,8 +16,8 @@ const fetchCharacter = async (id) => {
         origin: {
             name: character.origin.name,
         },
-        location: character.location.url, // Retorna o URL para buscar a localização
-        episodes: character.episode, // URLs dos episódios
+        location: character.location.url, 
+        episodes: character.episode, 
         image: character.image,
     };
     return translatedCharacter;
@@ -27,7 +26,6 @@ const fetchCharacter = async (id) => {
 const fetchLocation = async (url) => {
     const res = await fetch(url);
     const location = await res.json();
-    // Mapeia as informações para traduzir para o português
     const translatedLocation = {
         name: location.name,
         type: location.type,
@@ -37,11 +35,9 @@ const fetchLocation = async (url) => {
 }
 
 const fetchEpisode = async (urls) => {
-    // Mapeia os URLs dos episódios e faz uma requisição para cada um
     const episodes = await Promise.all(urls.map(async url => {
         const res = await fetch(url);
         const episode = await res.json();
-        // Mapeia as informações para traduzir para o português
         return {
             name: episode.name,
         };

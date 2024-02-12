@@ -5,13 +5,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
+    flex-direction: column; 
     align-items: center;
 }
 
 form {
     text-align: center;
-    margin-top: 20px; /* Movido para o topo da página */
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -19,11 +19,11 @@ input[type="number"] {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px; /* Ajustado o espaçamento entre o input e o botão */
+    margin-right: 10px; 
 }
 
 button {
-    padding: 8px 70px; /* Ajustado o padding vertical */
+    padding: 8px 70px; 
     border-radius: 5px;
     margin-top: 10px;
     border: none;
@@ -44,7 +44,7 @@ button:hover {
     overflow: auto;
     max-width: 400px;
     margin: 0 auto;
-    text-align: center; /* Centraliza o conteúdo */
+    text-align: center; 
 }
 
 #character-info,
