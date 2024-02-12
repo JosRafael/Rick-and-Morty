@@ -8,7 +8,48 @@ const episodesInfo = document.getElementById('episodes-info');
 characterInfo.style.display = 'none';
 locationInfo.style.display = 'none';
 episodesInfo.style.display = 'none';
+const form = document.querySelector('form'); // Add this line to select the form
 
+form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // This prevents the default form submit action
+    const id = characterId.value;
+    if(id) {
+        const character = await fetchCharacter(id);
+        characterInfo.innerHTML = `
+          <h2>Informações do Personagem</h2>
+          <h3>${character.name}</h3>
+          <p>Status: ${character.status}</p>
+          <p>Espécie: ${character.species}</p>
+          <p>Tipo: ${character.type}</p>
+          <p>Gênero: ${character.gender}</p>
+          <p>Origem: ${character.origin.name}</p>
+          <img src="${character.image}" alt="${character.name}">
+        `;
+        characterInfo.style.display = 'block';
+
+        const location = await fetchLocation(character.location);
+        locationInfo.innerHTML = `
+          <h2>Localização do Personagem</h2>
+          <p>Nome: ${location.name}</p>
+          <p>Tipo: ${location.type}</p>
+          <p>Dimensão: ${location.dimension}</p>
+        `;
+        locationInfo.style.display = 'block';
+
+        const episodes = await fetchEpisode(character.episodes);
+        episodesInfo.innerHTML = `
+          <h2>Episódios do Personagem</h2>
+          <ul>
+            ${episodes.map(episode => `<li>${episode.name}</li>`).join('')}
+          </ul>
+        `;
+        episodesInfo.style.display = 'block';
+
+        document.getElementById('content').style.display = 'block'; // Show the content
+    } else {
+        alert('Por favor, digite o ID do personagem.');
+    }
+});
 const fetchCharacter = async (id) => {
     const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
     const character = await res.json();
