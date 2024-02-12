@@ -1,6 +1,7 @@
 # Rick and Morty Informações 
 
-![Rick and Morty]([rick_and_morty_image.jpg](https://img.elo7.com.br/product/zoom/2AC1187/placa-decorativa-quadro-anime-rick-and-morty-h347-filme.jpg))
+![Rick and Morty](https://img.elo7.com.br/product/zoom/2AC1187/placa-decorativa-quadro-anime-rick-and-morty-h347-filme.jpg)
+
 
 Este é um projeto desenvolvido como parte de estudos sobre integração com APIs, utilizando a API pública de Rick and Morty.
 
