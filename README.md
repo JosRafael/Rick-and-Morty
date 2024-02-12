@@ -1,4 +1,4 @@
-# Rick and Morty Character Information
+# Rick and Morty Informações 
 
 ![Rick and Morty]([rick_and_morty_image.jpg](https://img.elo7.com.br/product/zoom/2AC1187/placa-decorativa-quadro-anime-rick-and-morty-h347-filme.jpg))
 
