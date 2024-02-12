@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Alterado para empilhar os elementos verticalmente */
+    align-items: center;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px; /* Movido para o topo da página */
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px; /* Ajustado o espaçamento entre o input e o botão */
+}
+
+button {
+    padding: 8px 70px; /* Ajustado o padding vertical */
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+#character-info,
+#location-info,
+#episodes-info {
+    margin-bottom: 20px;
+}
+
+#character-info h2,
+#location-info h2,
+#episodes-info h2 {
+    color: #007bff;
+}
+
+#character-info p,
+#location-info p,
+#episodes-info p {
+    margin: 5px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    border-radius: 5px;
+}

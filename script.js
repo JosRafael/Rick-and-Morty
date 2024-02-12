@@ -6,17 +6,47 @@ const episodesInfo = document.getElementById('episodes-info');
 
 const fetchCharacter = async (id) => {
     const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-    return await res.json();
+    const character = await res.json();
+    // Mapeia as informações para traduzir para o português
+    const translatedCharacter = {
+        name: character.name,
+        status: character.status === 'Alive' ? 'Vivo' : 'Morto',
+        species: character.species,
+        type: character.type,
+        gender: character.gender === 'Male' ? 'Masculino' : 'Feminino',
+        origin: {
+            name: character.origin.name,
+        },
+        location: character.location.url, // Retorna o URL para buscar a localização
+        episodes: character.episode, // URLs dos episódios
+        image: character.image,
+    };
+    return translatedCharacter;
 }
 
 const fetchLocation = async (url) => {
     const res = await fetch(url);
-    return await res.json();
+    const location = await res.json();
+    // Mapeia as informações para traduzir para o português
+    const translatedLocation = {
+        name: location.name,
+        type: location.type,
+        dimension: location.dimension,
+    };
+    return translatedLocation;
 }
 
-const fetchEpisode = async (url) => {
-    const res = await fetch(url);
-    return await res.json();
+const fetchEpisode = async (urls) => {
+    // Mapeia os URLs dos episódios e faz uma requisição para cada um
+    const episodes = await Promise.all(urls.map(async url => {
+        const res = await fetch(url);
+        const episode = await res.json();
+        // Mapeia as informações para traduzir para o português
+        return {
+            name: episode.name,
+        };
+    }));
+    return episodes;
 }
 
 btnGo.addEventListener('click', async (event) => {
@@ -26,25 +56,24 @@ btnGo.addEventListener('click', async (event) => {
     characterInfo.innerHTML = `
       <h2>${character.name}</h2>
       <p>Status: ${character.status}</p>
-      <p>Species: ${character.species}</p>
-      <p>Type: ${character.type}</p>
-      <p>Gender: ${character.gender}</p>
-      <p>Origin: ${character.origin.name}</p>
-      <p>Last Location: ${character.location.name}</p>
+      <p>Espécie: ${character.species}</p>
+      <p>Tipo: ${character.type}</p>
+      <p>Gênero: ${character.gender}</p>
+      <p>Origem: ${character.origin.name}</p>
       <img src="${character.image}" alt="${character.name}">
     `;
 
-    const location = await fetchLocation(character.location.url);
+    const location = await fetchLocation(character.location);
     locationInfo.innerHTML = `
-      <h2>Location Info</h2>
-      <p>Name: ${location.name}</p>
-      <p>Type: ${location.type}</p>
-      <p>Dimension: ${location.dimension}</p>
+      <h2>Informações de Localização</h2>
+      <p>Nome: ${location.name}</p>
+      <p>Tipo: ${location.type}</p>
+      <p>Dimensão: ${location.dimension}</p>
     `;
 
-    const episodes = await Promise.all(character.episode.map(url => fetchEpisode(url)));
+    const episodes = await fetchEpisode(character.episodes);
     episodesInfo.innerHTML = `
-      <h2>Episodes Info</h2>
+      <h2>Informações de Episódios</h2>
       <ul>
         ${episodes.map(episode => `<li>${episode.name}</li>`).join('')}
       </ul>
