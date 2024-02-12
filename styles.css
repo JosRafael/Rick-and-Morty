@@ -50,8 +50,10 @@ button:hover {
 #character-info,
 #location-info,
 #episodes-info {
+    display: none; /* Inicialmente oculto */
     margin-bottom: 20px;
 }
+
 
 #character-info h2,
 #location-info h2,
