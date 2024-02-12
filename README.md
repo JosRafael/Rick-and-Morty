@@ -1,4 +1,4 @@
-# Rick and Morty Informações 
+# Rick and Morty API
 
 ![Rick and Morty](https://img.elo7.com.br/product/zoom/2AC1187/placa-decorativa-quadro-anime-rick-and-morty-h347-filme.jpg)
 
