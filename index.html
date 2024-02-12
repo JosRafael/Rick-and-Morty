@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Rick and Morty</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <form method="get" action="">
-        <input type="number" name="" id="characterId">
-        <button id="btn-go">VAI</button>
-    </form>
-    <pre id="content"></pre>
-    <img src="" alt="" id="img">
+
+<head>
+  <title>Rick and Morty</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <form method="get" action="">
+    <input type="number" name="characterId" id="characterId" placeholder="Digite o ID do personagem">
+    <button id="btn-go">VAI</button>
+  </form>
+  <div id="content">
+    <h2>Informações do Personagem</h2>
+    <div id="character-info"></div>
+    <h2>Localização do Personagem</h2>
+    <div id="location-info"></div>
+    <h2>Episódios do Personagem</h2>
+    <div id="episodes-info"></div>
+  </div>
 </body>
 <script src="./script.js"></script>
+
 </html>

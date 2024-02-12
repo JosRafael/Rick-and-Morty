@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    max-width: 500px; /* Ajuste a largura máxima conforme desejado */
+    padding: 20px;
+  }
+  
+  form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="number"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-width: 100%; /* Remova a largura máxima do conteúdo para que ele se ajuste ao contêiner */
+    margin: 0 auto;
+  }
+  
+  #character-info,
+  #location-info,
+  #episodes-info {
+    margin-bottom: 20px;
+  }
+  
+  #character-info h2,
+  #location-info h2,
+  #episodes-info h2 {
+    color: #007bff;
+  }
+  
+  #character-info p,
+  #location-info p,
+  #episodes-info p {
+    margin: 5px 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
